@@ -1,0 +1,11 @@
+
+<h1>Perguntas</h1>
+
+<button [routerLink]="['/']" class="p-button-danger" style="padding: 5px;" pButton type="button" label="Voltar"></button>
+<br><br>
+<p-accordion [multiple]="true">
+  <p-accordionTab header="{{itens.pergunta}}" *ngFor="let itens of perguntas">
+      {{itens.resposta}}
+  </p-accordionTab>
+
+</p-accordion>

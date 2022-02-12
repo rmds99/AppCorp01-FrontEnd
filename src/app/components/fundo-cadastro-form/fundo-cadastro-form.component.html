@@ -1,0 +1,56 @@
+<div class="container ">
+
+  <form autocomplete="off"  #cadastroForm="ngForm" >
+
+    <div class="formgrid grid">
+
+      <div class="col-12">
+        <h1>Cadastro de fundo imobiliario</h1>
+      </div>
+
+      <div class="field col-12 md:col-2 p-fluid">
+        <label>Nome</label>
+        <input pInputText type="text" name="nome" [(ngModel)]="fundoImobiliario.nomeFundo"  required minlength="5">
+      </div>
+
+      <div class="field col-12 md:col-2 p-fluid">
+        <label>Valor</label>
+        <input pInputText type="email" name="email" [(ngModel)]="fundoImobiliario.valor" required>
+      </div>
+
+      <div class="field col-6 md:col-4 p-fluid">
+        <label>Data de investimento</label>
+        <p-calendar
+          [(ngModel)]="fundoImobiliario.dataInvestimento" name="dataInvestimento"
+          dateFormat="dd/mm/yy"
+          [inline]="false"
+          [readonlyInput]="true"
+          [showIcon]="false"
+          [required]="true"
+        ></p-calendar>
+      </div>
+
+
+      <div class="field col-6 md:col-4 p-fluid">
+        <label>Data de resgate</label>
+        <p-calendar
+          [(ngModel)]="fundoImobiliario.dataResgate" name="dataResgate"
+          dateFormat="dd/mm/yy"
+          [inline]="false"
+          [readonlyInput]="true"
+          [showIcon]="false"
+          [required]="true"
+        ></p-calendar>
+      </div>
+
+
+
+      <div class="col-12">
+        <button (click)="criarFundo()" style="margin-right: 4px;" pButton type="submit" label="Salvar" [disabled]="cadastroForm.invalid"></button>
+
+        <button [routerLink]="['/home']" class="p-button-danger" style="margin-right: 4px;" pButton type="button" label="Voltar"></button>
+      </div>
+
+    </div>
+  </form>
+</div>

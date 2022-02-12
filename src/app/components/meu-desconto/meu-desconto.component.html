@@ -1,0 +1,38 @@
+<br>
+<div class="container mt-5">
+
+    <div class="formgrid grid" *ngIf="info == true ">
+
+      <div class="field col-12 md:col-4 p-fluid">
+        <p-card header="Sálario Bruto" subheader="Sálario Inicial" [style]="{width: '360px'}" styleClass="p-card-shadow">
+          <ng-template pTemplate="header">
+              <img alt="Card" src="assets/img/real.jpg">
+          </ng-template>
+          <h1 style="color: deepskyblue;">{{calculo.salarioBruto}} Reais</h1>
+        </p-card>
+      </div>
+
+      <div class="field col-12 md:col-4 p-fluid">
+        <p-card header="Taxa" subheader="Percentagem a ser descontada" [style]="{width: '360px'}" styleClass="p-card-shadow">
+          <ng-template pTemplate="header">
+              <img alt="Card" src="assets/img/taxa.jpeg">
+          </ng-template>
+          <h1 style="color: red;">{{calculo.taxa}} %</h1>
+          </p-card>
+      </div>
+
+      <div class="field col-12 md:col-4 p-fluid">
+        <p-card header="Sálario Líquido" subheader="Sálario final" [style]="{width: '360px'}" styleClass="p-card-shadow">
+          <ng-template pTemplate="header">
+              <img alt="Card" src="assets/img/liquido.jpg">
+          </ng-template>
+          <h1 style="color: green;">{{calculo.salarioLiquido}} Reais</h1>
+        </p-card>
+      </div>
+
+    </div>
+    <div *ngIf="info==false">
+      <br><br>
+      <h1 class="m-5">SEM INFORMAÇÃO - REALIZE UM CÁLCULO </h1>
+    </div>
+</div>

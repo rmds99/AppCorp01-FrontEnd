@@ -1,0 +1,27 @@
+<div class="container ">
+
+  <form autocomplete="off"  #cadastroForm="ngForm" >
+
+    <div class="formgrid grid">
+
+      <div class="col-12">
+        <h1>Calculo Desconto</h1>
+      </div>
+
+      <div class="field col-12 md:col-2 p-fluid">
+        <label>Salário</label>
+        <input pInputText placeholder="Digite o seu salário" type="number" name="nome" [(ngModel)]="novoCalculo.salarioBruto"  required   >
+      </div>
+
+
+      <div class="col-12">
+
+        <button (click)="calcular()" style="margin-right: 4px;" pButton type="submit" label="Salvar" [disabled]="cadastroForm.invalid"></button>
+
+        <button [routerLink]="['/home']" class="p-button-danger" style="margin-right: 4px;" pButton type="button" label="Voltar"></button>
+
+      </div>
+
+    </div>
+  </form>
+</div>
